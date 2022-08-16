@@ -94,6 +94,23 @@ buttonMinus.addEventListener("click", function () {
   timer.minusFive();
 });
 
+// CLICK AND TOUCH CONFIG
+
+buttonForest.addEventListener("touchstart", onlyTouch, false);
+buttonForestSelected.addEventListener("touchend", onlyTouch, false);
+buttonRain.addEventListener("touchstart", onlyTouch, false);
+buttonRainSelected.addEventListener("touchend", onlyTouch, false);
+buttonCoffee.addEventListener("touchstart", onlyTouch, false);
+buttonCoffeeSelected.addEventListener("touchend", onlyTouch, false);
+buttonFireplace.addEventListener("touchstart", onlyTouch, false);
+buttonFireplaceSelected.addEventListener("touchend", onlyTouch, false);
+
+function onlyTouch(ev) {
+  ev.preventDefault();
+}
+
+// FOREST CLICK
+
 buttonForest.addEventListener("click", function () {
   sound.pressButtonForestOn();
   color.forestButtonSelected();
@@ -105,6 +122,22 @@ buttonForestSelected.addEventListener("click", function () {
   color.forestButton();
   color.forestSlider();
 });
+
+// FOREST TOUCH
+
+buttonForest.addEventListener("touchstart", function () {
+  sound.pressButtonForestOn();
+  color.forestButtonSelected();
+  color.forestSliderSelected();
+});
+
+buttonForestSelected.addEventListener("touchstart", function () {
+  sound.pressButtonForestOff();
+  color.forestButton();
+  color.forestSlider();
+});
+
+// RAIN CLICK
 
 buttonRain.addEventListener("click", function () {
   sound.pressButtonRainOn();
@@ -118,6 +151,22 @@ buttonRainSelected.addEventListener("click", function () {
   color.rainSlider();
 });
 
+// RAIN TOUCH
+
+buttonRain.addEventListener("touchstart", function () {
+  sound.pressButtonRainOn();
+  color.rainButtonSelected();
+  color.rainSliderSelected();
+});
+
+buttonRainSelected.addEventListener("touchstart", function () {
+  sound.pressButtonRainOff();
+  color.rainButton();
+  color.rainSlider();
+});
+
+// COFFEE CLICK
+
 buttonCoffee.addEventListener("click", function () {
   sound.pressButtonCoffeeOn();
   color.coffeeButtonSelected();
@@ -130,6 +179,22 @@ buttonCoffeeSelected.addEventListener("click", function () {
   color.coffeeSlider();
 });
 
+// COFFEE TOUCH
+
+buttonCoffee.addEventListener("touchstart", function () {
+  sound.pressButtonCoffeeOn();
+  color.coffeeButtonSelected();
+  color.coffeeSliderSelected();
+});
+
+buttonCoffeeSelected.addEventListener("touchstart", function () {
+  sound.pressButtonCoffeeOff();
+  color.coffeeButton();
+  color.coffeeSlider();
+});
+
+// FIREPLACE CLICK
+
 buttonFireplace.addEventListener("click", function () {
   sound.pressButtonFireplaceOn();
   color.fireplaceButtonSelected();
@@ -137,6 +202,20 @@ buttonFireplace.addEventListener("click", function () {
 });
 
 buttonFireplaceSelected.addEventListener("click", function () {
+  sound.pressButtonFireplaceOff();
+  color.fireplaceButton();
+  color.fireplaceSlider();
+});
+
+// FIREPLACE TOUCH
+
+buttonFireplace.addEventListener("touchstart", function () {
+  sound.pressButtonFireplaceOn();
+  color.fireplaceButtonSelected();
+  color.fireplaceSliderSelected();
+});
+
+buttonFireplaceSelected.addEventListener("touchstart", function () {
   sound.pressButtonFireplaceOff();
   color.fireplaceButton();
   color.fireplaceSlider();

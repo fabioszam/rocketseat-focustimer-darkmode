@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+.dark-theme {
+  --timer-color: white;
+  --controls-color: #c4c4cc;
+  --icon-sounds-color1: #29292e;
+  --icon-sounds-color2: #c4c4cc;
+  --icon-sounds-hover-color1: #0a3442;
+  --icon-sounds-hover-color2: white;
+  --bg-color: #121214;
+  --slider-color: white;
+  --slider-color-hover: white;
+}
+
+.light-theme {
+  --timer-color: #323238;
+  --controls-color: #323238;
+  --icon-sounds-color1: #e1e1e6;
+  --icon-sounds-color2: #323238;
+  --icon-sounds-hover-color1: #02799d;
+  --icon-sounds-hover-color2: white;
+  --bg-color: white;
+  --slider-color: #323238;
+  --slider-color-hover: white;
+}
+
+body {
+  color: var(--timer-color);
+
+  font-family: "Roboto", sans-serif;
+
+  display: grid;
+
+  min-height: 100vh;
+
+  background: var(--bg-color);
+}
+
+header {
+  display: flex;
+  position: absolute;
+  align-self: top;
+  justify-self: end;
+
+  padding: 6.4rem;
+}
+
+main {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  padding: 5rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.slider-box {
+  position: absolute;
+}
+
+.button-container {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.slidecontainer {
+  padding-bottom: 2.7rem;
+}
+
+.slider {
+  width: 9rem;
+  height: 0.4rem;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 5px;
+  background: var(--slider-color);
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--slider-color);
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--slider-color);
+}
+
+.icon-sound:hover .slider {
+  background: var(--slider-color-hover);
+}
+
+.icon-sound:hover .slider::-webkit-slider-thumb {
+  background: var(--slider-color-hover);
+}
+
+.icon-sound:hover .slider::-moz-range-thumb {
+  background: var(--slider-color-hover);
+}
+
+.cor2 {
+  transform: translate(0px, -25px);
+}
+
+#countdown {
+  align-self: center;
+  padding-right: 19.2rem;
+}
+
+#timer {
+  color: var(--timer-color);
+  font-size: 12rem;
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+#controls svg path {
+  fill: var(--controls-color);
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3.2rem;
+  grid-template-areas:
+    "item1 item2"
+    "item3 item4";
+}
+
+.icon-sound svg path {
+  fill: var(--icon-sounds-color1);
+}
+
+.icon-sound svg path + path {
+  fill: var(--icon-sounds-color2);
+}
+
+.icon-sound:hover .cor1 {
+  fill: var(--icon-sounds-hover-color1);
+}
+
+.icon-sound:hover .cor2 {
+  fill: var(--icon-sounds-hover-color2);
+}
+
+.button-forest-selected .cor1 {
+  fill: var(--icon-sounds-hover-color1);
+}
+.button-forest-selected .cor2 {
+  fill: var(--icon-sounds-hover-color2);
+}
+
+.slider-forest-selected {
+  --slider-color: white;
+}
+
+.button-rain-selected .cor1 {
+  fill: var(--icon-sounds-hover-color1);
+}
+.button-rain-selected .cor2 {
+  fill: var(--icon-sounds-hover-color2);
+}
+
+.slider-rain-selected {
+  --slider-color: white;
+}
+
+.button-coffee-selected .cor1 {
+  fill: var(--icon-sounds-hover-color1);
+}
+.button-coffee-selected .cor2 {
+  fill: var(--icon-sounds-hover-color2);
+}
+
+.slider-coffee-selected {
+  --slider-color: white;
+}
+
+.button-fireplace-selected .cor1 {
+  fill: var(--icon-sounds-hover-color1);
+}
+.button-fireplace-selected .cor2 {
+  fill: var(--icon-sounds-hover-color2);
+}
+
+.slider-fireplace-selected {
+  --slider-color: white;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 3rem;
+    justify-self: center;
+  }
+  main {
+    display: grid;
+  }
+
+  #sounds {
+    margin-top: 4.8rem;
+    display: grid;
+    width: fit-content;
+    gap: 3.2rem;
+  }
+
+  #countdown {
+    padding: 0;
+    margin-top: 3rem;
+  }
+}

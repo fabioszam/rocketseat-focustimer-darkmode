@@ -229,11 +229,13 @@ button {
 
 @media (max-width: 768px) {
   header {
-    padding: 3rem;
+    padding-bottom: 0;
+    position: relative;
     justify-self: center;
   }
   main {
     display: grid;
+    padding-top: 0;
   }
 
   #sounds {

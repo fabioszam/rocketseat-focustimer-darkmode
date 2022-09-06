@@ -4,7 +4,7 @@ export default function Sounds() {
   );
 
   const buttonPressRain = new Audio(
-    "https://github.com/fabioszam/MyFiles/blob/master/Chuva.wav?raw=true"
+    "http://github.com/fabioszam/MyFiles/blob/master/Chuva.wav?raw=true"
   );
 
   const buttonPressCoffee = new Audio(
